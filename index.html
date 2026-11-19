@@ -173,6 +173,7 @@ footer{color:var(--mut);font-size:15px;text-align:center;border-top:1px solid va
 <section id="news">
   <h2>News</h2>
   <ul class="news">
+    <li><b>[Nov. 2026]</b> <a href="https://roboparty.github.io/PartyMimic/">PartyMimic</a> is released: general humanoid motion tracking trained in about 28 minutes on one RTX 4090.</li>
     <li><b>[Oct. 2026]</b> <a href="https://roboparty.github.io/P-BFM/">P-BFM</a> is released: perceptive behavioral foundation models for terrain-adaptive humanoid control.</li>
     <li><b>[Oct. 2026]</b> <a href="https://iamhardworking.github.io/I-BFM/">I-BFM</a> is released: the first behavioral foundation model for humanoid–object interaction.</li>
     <li><b>[Sep. 2026]</b> <a href="https://github.com/Roboparty/human-humanoid-tools">HHtools 0.1.0 Preview</a> is out, with a desktop app, six built-in humanoids and agent-facing interfaces.</li>
@@ -182,7 +183,7 @@ footer{color:var(--mut);font-size:15px;text-align:center;border-top:1px solid va
 
 <section id="opensource">
   <h2>Open Source</h2>
-  <div class="statline"><i class="fa-solid fa-star"></i> Open-source projects I lead: <b id="ossStars">420+</b> stars on GitHub</div>
+  <div class="statline"><i class="fa-solid fa-star"></i> Open-source projects I lead: <b id="ossStars">500+</b> stars on GitHub</div>
 
   <div class="item">
     <div class="media contain"><img src="assets/img/partyos.jpg" alt="Party OS roadmap"></div>
@@ -192,6 +193,20 @@ footer{color:var(--mut);font-size:15px;text-align:center;border-top:1px solid va
       <div class="btns">
         <a href="https://github.com/Roboparty/Party_OS"><i class="fa-brands fa-github"></i>Code</a>
         <a class="star" href="https://github.com/Roboparty/Party_OS"><i class="fa-solid fa-star"></i><span data-repo="Roboparty/Party_OS">174</span></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="media"><video src="assets/img/partymimic.mp4" poster="assets/img/partymimic.jpg" autoplay muted loop playsinline></video></div>
+    <div>
+      <a class="title" href="https://github.com/Roboparty/PartyMimic">PartyMimic</a>
+      <div class="desc">General humanoid motion tracking in minutes on one GPU. One whole-body tracking policy learns a 41-hour motion library in about 28 minutes on a single RTX 4090 and tracks unseen motions zero-shot on Unitree G1 and RoboParty RP1, with the lowest held-out manipulation error (21.4 mm on G1) of every method we compared.</div>
+      <div class="tags"><span>Model-based RL</span><span>Motion tracking</span><span>Unitree G1</span><span>RoboParty RP1</span></div>
+      <div class="btns">
+        <a href="https://github.com/Roboparty/PartyMimic"><i class="fa-brands fa-github"></i>Code</a>
+        <a class="star" href="https://github.com/Roboparty/PartyMimic"><i class="fa-solid fa-star"></i><span data-repo="Roboparty/PartyMimic">94</span></a>
+        <a href="https://roboparty.github.io/PartyMimic/"><i class="fa-solid fa-globe"></i>Project</a>
       </div>
     </div>
   </div>
@@ -384,7 +399,7 @@ const links=[...document.querySelectorAll('.nav a')],secs=[...document.querySele
 function spy(){let cur=secs[0].id;for(const s of secs)if(s.getBoundingClientRect().top<innerHeight*.3)cur=s.id;if(innerHeight+scrollY>=document.body.scrollHeight-4)cur=secs.at(-1).id;links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+cur))}
 addEventListener('scroll',spy,{passive:true});spy();
 
-const mine=['Roboparty/human-humanoid-tools','Roboparty/Party_OS'];
+const mine=['Roboparty/human-humanoid-tools','Roboparty/Party_OS','Roboparty/PartyMimic'];
 const els=[...document.querySelectorAll('[data-repo]')],repos=[...new Set(els.map(e=>e.dataset.repo))],got={};
 Promise.all(repos.map(r=>fetch('https://api.github.com/repos/'+r).then(x=>x.ok?x.json():null).then(j=>{if(j&&j.stargazers_count!=null)got[r]=j.stargazers_count}).catch(()=>{}))).then(()=>{
   els.forEach(e=>{if(got[e.dataset.repo]!=null)e.textContent=got[e.dataset.repo].toLocaleString('en-US')});
