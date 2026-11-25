@@ -72,7 +72,7 @@ ul.plain li{margin:4px 0}
 .item{display:grid;grid-template-columns:250px 1fr;gap:28px;align-items:center;margin:0 0 34px}
 .media{position:relative;aspect-ratio:16/10;border-radius:8px;overflow:hidden;background:var(--panel);box-shadow:0 6px 18px #0005}
 .media img,.media video{width:100%;height:100%;object-fit:cover;display:block}
-.media.contain img{object-fit:contain;background:#fff}
+.media.contain img,.media.contain video{object-fit:contain;background:#fff}
 .badge{position:absolute;left:0;top:10px;background:var(--accent);color:#fff;font:600 13px/1 var(--serif);padding:6px 12px 6px 14px;border-radius:0 4px 4px 0;letter-spacing:.3px;box-shadow:0 2px 6px #0004}
 .badge.gold{background:#b7862c}.badge.gray{background:#5b6275}.badge.green{background:#2f8a69}
 .ph{display:flex;align-items:center;justify-content:center;height:100%;font-size:26px;font-style:italic;color:var(--mut);background:linear-gradient(135deg,var(--panel),var(--panel2))}
@@ -174,6 +174,7 @@ footer{color:var(--mut);font-size:15px;text-align:center;border-top:1px solid va
   <h2>News</h2>
   <ul class="news">
     <li><b>[Nov. 2026]</b> <a href="https://roboparty.github.io/PartyMimic/">PartyMimic</a> is released: general humanoid motion tracking trained in about 28 minutes on one RTX 4090.</li>
+    <li><b>[Nov. 2026]</b> The <a href="https://huggingface.co/datasets/YaojieShen/hhtools_parkour_mocap">hhtools Parkour Mocap Dataset</a> is out: 143 optical-mocap parkour clips with terrain meshes, ready for HHtools retargeting.</li>
     <li><b>[Oct. 2026]</b> <a href="https://roboparty.github.io/P-BFM/">P-BFM</a> is released: perceptive behavioral foundation models for terrain-adaptive humanoid control.</li>
     <li><b>[Oct. 2026]</b> <a href="https://iamhardworking.github.io/I-BFM/">I-BFM</a> is released: the first behavioral foundation model for humanoid–object interaction.</li>
     <li><b>[Sep. 2026]</b> <a href="https://github.com/Roboparty/human-humanoid-tools">HHtools 0.1.0 Preview</a> is out, with a desktop app, six built-in humanoids and agent-facing interfaces.</li>
@@ -186,7 +187,7 @@ footer{color:var(--mut);font-size:15px;text-align:center;border-top:1px solid va
   <div class="statline"><i class="fa-solid fa-star"></i> Open-source projects I lead: <b id="ossStars">500+</b> stars on GitHub</div>
 
   <div class="item">
-    <div class="media contain"><img src="assets/img/partyos.jpg" alt="Party OS roadmap"></div>
+    <div class="media contain"><img src="assets/img/partyos.jpg?v=2" alt="Party OS technical map"></div>
     <div>
       <a class="title" href="https://github.com/Roboparty/Party_OS">Party OS</a>
       <div class="desc">The humanoid R&amp;D system of RoboParty Lab, organized into System 0, System 1, System 2 and Infra, and connecting data collection, motion processing, training and real-robot deployment.</div>
@@ -198,7 +199,7 @@ footer{color:var(--mut);font-size:15px;text-align:center;border-top:1px solid va
   </div>
 
   <div class="item">
-    <div class="media"><video src="assets/img/partymimic.mp4" poster="assets/img/partymimic.jpg" autoplay muted loop playsinline></video></div>
+    <div class="media contain"><video src="assets/img/partymimic.mp4?v=2" poster="assets/img/partymimic.jpg?v=2" style="background:#f6f7f9" autoplay muted loop playsinline></video></div>
     <div>
       <a class="title" href="https://github.com/Roboparty/PartyMimic">PartyMimic</a>
       <div class="desc">General humanoid motion tracking in minutes on one GPU. One whole-body tracking policy learns a 41-hour motion library in about 28 minutes on a single RTX 4090 and tracks unseen motions zero-shot on Unitree G1 and RoboParty RP1, with the lowest held-out manipulation error (21.4 mm on G1) of every method we compared.</div>
@@ -220,6 +221,19 @@ footer{color:var(--mut);font-size:15px;text-align:center;border-top:1px solid va
         <a href="https://github.com/Roboparty/human-humanoid-tools"><i class="fa-brands fa-github"></i>Code</a>
         <a class="star" href="https://github.com/Roboparty/human-humanoid-tools"><i class="fa-solid fa-star"></i><span data-repo="Roboparty/human-humanoid-tools">254</span></a>
         <a href="https://roboparty.github.io/human-humanoid-tools/"><i class="fa-solid fa-globe"></i>Project</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="media"><video src="assets/img/parkour.mp4" poster="assets/img/parkour.jpg" autoplay muted loop playsinline></video></div>
+    <div>
+      <a class="title" href="https://huggingface.co/datasets/YaojieShen/hhtools_parkour_mocap">hhtools Parkour Mocap Dataset</a>
+      <div class="desc">143 optical-mocap parkour clips (about 29 minutes at 120 Hz) recorded on real obstacles: box vaults, trapezoid and sloped obstacles, inclined-plane runs, a balance beam, combined parkour runs and flips. Every clip ships with its terrain mesh, ready for interaction-mesh retargeting in HHtools.</div>
+      <div class="tags"><span>Motion capture</span><span>Parkour</span><span>Terrain</span><span>120 Hz</span></div>
+      <div class="btns">
+        <a href="https://huggingface.co/datasets/YaojieShen/hhtools_parkour_mocap"><i class="fa-solid fa-database"></i>Dataset</a>
+        <a href="https://github.com/Roboparty/human-humanoid-tools"><i class="fa-brands fa-github"></i>HHtools</a>
       </div>
     </div>
   </div>
